@@ -19,6 +19,13 @@ bool ValidarNumero(int numero) {
 		return false;
 	return true;
 }
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="a"></param>
+/// <param name="numero"></param>
+/// <returns></returns>
 bool ExisteNumero(std::array<int, 20U> a, int numero)
 {
 
