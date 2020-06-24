@@ -13,7 +13,7 @@ using namespace std;
 /// </summary>
 /// <param name="numero">El numero a agregar</param>
 /// <returns>verdadero si no cumple con las restricciones verdadero si 
-// las cumple. </returns>
+// las cumple. El numero debe de estar entre 10 y 100 </returns>
 bool ValidarNumero(int numero) {
 	if (numero < 10 || numero > 100)
 		return false;
