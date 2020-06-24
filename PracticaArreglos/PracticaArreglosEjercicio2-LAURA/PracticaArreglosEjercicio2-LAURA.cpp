@@ -39,13 +39,13 @@ bool ExisteNumero(std::array<int, 20U> a, int numero)
 	return false;
 }
 
-int main()
+void Ejercicio1()
 {
 	//delaracion y limpieza del arreglo
 	array<int, 20> a = {};
 	//numero que se ingresa
 	int numero;
-	
+
 	//ciclo for
 	for (int i = 0; i < 5; i++) {
 		cout << "Digite un numero entre 10 y 100:\n";
@@ -61,6 +61,11 @@ int main()
 				cout << "El numero ya existe en el arreglo";
 		}
 	}
+}
+
+int main()
+{
+	Ejercicio1();
 
 	return 0;
 }
