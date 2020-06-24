@@ -21,7 +21,7 @@ bool ValidarNumero(int numero) {
 }
 
 /// <summary>
-/// Funcion -
+/// Funcion --
 /// </summary>
 /// <param name="a"></param>
 /// <param name="numero"></param>
