@@ -10,12 +10,10 @@
 using namespace std;
 
 /// <summary>
-/// Funcion que valida si un numero cumple
-/// con los requisitos para ser agregado al arreglo
+/// 
 /// </summary>
-/// <param name="numero">El numero a agregar</param>
-/// <returns>verdadero si no cumple con las restricciones verdadero si 
-/// las cumple. El numero debe de estar entre 10 y 100 </returns>
+/// <param name="numero"></param>
+/// <returns></returns>
 bool ValidarNumero(int numero) {
 	if (numero < 10 || numero > 100)
 		return false;
