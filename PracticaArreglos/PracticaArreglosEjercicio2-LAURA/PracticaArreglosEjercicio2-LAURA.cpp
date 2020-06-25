@@ -28,12 +28,12 @@ bool ValidarNumero(int numero) {
 /// <param name="a">es el nombre del arreglo</param>
 /// <param name="numero">es el numero que ingresa el usuario</param>
 /// <returns>faslso si el numero no esta en el arreglo, verdadero si está</returns>
-bool ExisteNumero(std::array<int, 20U> a, int numero)
+bool ExisteNumero(array<int, 20U> a, int numero)
 {
 
 	//La palabra clave auto por sí misma representa un tipo de valor, similar a int o char
 	//la variable define en tiempo de ejecucion el tipo
-	for (auto& current : a) {
+	for (int current : a) {
 		if (current == numero)
 		{
 			cout << "Numero ya existe";
@@ -48,34 +48,43 @@ void Ejercicio1()
 	//delaracion y limpieza del arreglo
 	array<int, 20> a = {};
 	//numero que se ingresa
-	int numero;
+	int numero, i=0;
 
 	//ciclo for que pide el numero al usuario entre 10 y 100
-	for (int i = 0; i < 5; i++) {
+
+
+	while (i<=5)
+	{
 		cout << "Digite un numero entre 10 y 100:\n";
 		cin >> numero;
 		//llama a la funcion ValidarNumero
 		if (!ValidarNumero(numero)) {
-			cout << "El numero debe estar entre 10 y 100";
+			cout << "El numero debe estar entre 10 y 100\n";
 		}
 		else {
 			//llama a la funcion ExisteNumero
 			if (!ExisteNumero(a, numero)) {
 				a[i] = numero;
+				i++;
 			}
 			else
-				cout << "El numero ya existe en el arreglo";
+				cout << "El numero ya existe en el arreglo\n";
 		}
 	}
+	for (int i = 0; i < 5; i++)
+	{
+		cout << a[i]<<"\n";
+	}
+	
 }
 
-void Ejercicio2() {
+bool Ejercicio2() {
 
-	int m[5][5];
-	int fil=5, col=5;
+	int m[3][3];
+	int fil=3, col=3;
 	int dato;
-	int sumafila;
-	int sumacol;
+	//int sumafila;
+	//int sumacol;
 	int sumadiagonal;
 	
 	cout << endl;
@@ -89,7 +98,7 @@ void Ejercicio2() {
 	{
 		for (int j = 0; j < col; j++)
 		{
-			dato = 1 + rand() % (100);//generando numeros aleatrorios del 1 al 100
+			dato = 1 + rand() % (9);//generando numeros aleatrorios del 1 al 9
 			m[i][j] = dato;
 			cout << m[i][j]<< " ";
 		}
@@ -98,61 +107,80 @@ void Ejercicio2() {
 	
 	cout << "\n";
 	//suma de filas
-	for (int i = 0; i < fil; i++) {
-		sumafila = 0;
+	int sumainicial = 0;
+	int sumaactual = 0;
+	bool bandera = true;
+	int i = 0;
+
+
+	//sumas de las filas
+	while (i<fil && bandera==true)
+	{
+		sumaactual = 0;
 		for (int j = 0; j < col; j++) {
-			sumafila += m[i][j];
+			sumaactual += m[i][j];
 		}
-		cout << "La suma de la fila " << i << " es: " << sumafila <<"\n";
-	}
 
-	cout << "\n";
-
-	//suma de columnas
-	for (int i = 0; i < 5; i++) {
-		sumacol = 0;
-		for (int j = 0; j < 5; j++) {
-			sumacol += m[j][i];
+		if (i == 0)
+		{
+			sumainicial = sumaactual;
 		}
-		cout << "La suma de la columna" << i << " es: " << sumacol << "\n";
-	}
-
-	cout << "\n";
-
-	//suma de diagnal
-
-	sumadiagonal = 0;
-	for (int i = fil - 1, j = 0; i >= 0 && j < col; i--, j++) {
-		sumadiagonal += m[i][j];
-		
-	}
-	cout << "La suma de la diagonal es: " << sumadiagonal << "\n";
-
-	
-	
-		if (sumafila == sumacol)
-
-			cout << "Si se trata de un cuadrado magico" << "\n";
-
 		else
-			cout << "No se trata de un cuadrado mágico" << "\n";
-	
-	
-	
-	
-	
+			if (sumainicial != sumaactual)
+			{
+				bandera = false;
+			}
+		i++;
+	}
 
+	cout << "\n";
+
+	//sumas de las columnas
+	if (bandera)
+	{
+		while (i < col && bandera == true)
+		{
+			sumaactual = 0;
+			for (int j = 0; j < col; j++) {
+				sumaactual += m[j][i];
+			}
+
+			if (i == 0)
+			{
+				sumainicial = sumaactual;
+			}
+			else
+				if (sumainicial != sumaactual)
+				{
+					bandera = false;
+				}
+			i++;
+		}
+
+		//suma de diagnal
+
+		sumadiagonal = 0;
+		for (int i = fil - 1, j = 0; i >= 0 && j < col; i--, j++) {
+			sumadiagonal += m[i][j];
+		}
+		cout << "La suma de la diagonal es: " << sumadiagonal << "\n";
+
+	}
+	else
+
+		return false;
 }
-
-
 
 int main()
 {
-		
-	
 	//Ejercicio1();
 
-	Ejercicio2();
+	
+	if (Ejercicio2()==false)
+	{
+		cout << "No es un cuadrado magico: \n";
+	}else
+		cout << "Si es un cuadrado magico: \n";
 
 
 
