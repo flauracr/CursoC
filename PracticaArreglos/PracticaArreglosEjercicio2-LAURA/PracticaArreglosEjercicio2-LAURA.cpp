@@ -5,6 +5,8 @@
 #include <array>
 #include <conio.h>
 #include "PracticaArreglosEjercicio2-LAURA.h"
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
 
 /// <summary>
@@ -69,43 +71,70 @@ void Ejercicio1()
 
 void Ejercicio2() {
 
-	
-	cout << "CUADRADO MAGICO" << endl;
-	
-	cout << endl;
 	int m[5][5];
-	int fil, col;
-	memset(m, 0, sizeof(m));
-	int i = 0;
-	int j = 5 / 2;
-	for (int x = 1; x <= 5 * 5; x++)
-	{
-		m[i][j] = x;
-		fil = (i + 1) % 5;
-		col = (j + 1) % 5;
-			if (m[fil][col] == 0)
-			{
-				i = fil;
-				j = col;
-			}
-			else
-			{
-				i = (i - 1 + 5) % 5;
-			}
-		}
-		for (int f = 0; f < 5; f++)
-		{
-			for (int c = 0; c < 5; c++)
-			{
-				cout << m[f][c] << " ";
-			}
-			cout << "\n";
-		}
+	int fil=5, col=5;
+	int dato;
+	int sumafila;
+	int sumacol;
+	int sumadiagonal;
+	
+
+	cout << "******CUADRADO MAGICO*****" << endl;
+	cout << endl;
+
+	srand(time(NULL)); //generar numeros aleatrorios
 
 		
-		_getch();
-		system("cls");
+	for (int i = 0; i < fil; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			dato = 1 + rand() % (100);//generando numeros aleatrorios del 1 al 100
+			m[i][j] = dato;
+			cout << m[i][j]<< " ";
+		}
+		cout << "\n";
+	}
+	
+	cout << "\n";
+	//suma de filas
+	for (int i = 0; i < fil; i++) {
+		sumafila = 0;
+		for (int j = 0; j < col; j++) {
+			sumafila += m[i][j];
+		}
+		cout << "La suma de la fila " << i << " es: " << sumafila <<"\n";
+	}
 
+	cout << "\n";
+
+	//suma de columnas
+	for (int i = 0; i < 5; i++) {
+		sumacol = 0;
+		for (int j = 0; j < 5; j++) {
+			sumacol += m[j][i];
+		}
+		cout << "La suma de la columna" << i << " es: " << sumacol << "\n";
+	}
+
+	cout << "\n";
+
+	//suma de diagnal
+
+	sumadiagonal = 0;
+	for (int i = fil - 1, j = 0; i >= 0 && j < col; i--, j++) {
+		sumadiagonal += m[i][j];
+		
+	}
+	cout << "La suma de la diagonal es: " << sumadiagonal << "\n";
+
+	if (sumafila == sumacol and sumacol==sumadiagonal)
+	
+		cout << "Si se trata de un cuadrado magico" << "\n";
+
+	else
+		cout << "No se trata de un cuadrado mágico" << "\n";
+	
 	
 
 }

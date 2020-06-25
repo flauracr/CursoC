@@ -1,2 +1,3 @@
 ﻿  PracticaArreglosEjercicio2-LAURA.cpp
+C:\Users\laura\source\repos\CursoC\PracticaArreglos\PracticaArreglosEjercicio2-LAURA\PracticaArreglosEjercicio2-LAURA.cpp(85,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   PracticaArreglosEjercicio2-LAURA.vcxproj -> C:\Users\laura\source\repos\CursoC\PracticaArreglos\x64\Debug\PracticaArreglosEjercicio2-LAURA.exe
