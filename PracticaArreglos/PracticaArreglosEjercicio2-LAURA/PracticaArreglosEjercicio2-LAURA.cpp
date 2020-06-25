@@ -78,7 +78,7 @@ void Ejercicio2() {
 	int sumacol;
 	int sumadiagonal;
 	
-
+	cout << endl;
 	cout << "******CUADRADO MAGICO*****" << endl;
 	cout << endl;
 
@@ -128,12 +128,17 @@ void Ejercicio2() {
 	}
 	cout << "La suma de la diagonal es: " << sumadiagonal << "\n";
 
-	if (sumafila == sumacol and sumacol==sumadiagonal)
 	
-		cout << "Si se trata de un cuadrado magico" << "\n";
+	
+		if (sumafila == sumacol)
 
-	else
-		cout << "No se trata de un cuadrado mágico" << "\n";
+			cout << "Si se trata de un cuadrado magico" << "\n";
+
+		else
+			cout << "No se trata de un cuadrado mágico" << "\n";
+	
+	
+	
 	
 	
 
