@@ -69,11 +69,58 @@ void Ejercicio1()
 
 void Ejercicio2() {
 
+	
+	cout << "CUADRADO MAGICO" << endl;
+	
+	cout << endl;
+	int m[5][5];
+	int fil, col;
+	memset(m, 0, sizeof(m));
+	int i = 0;
+	int j = 5 / 2;
+	for (int x = 1; x <= 5 * 5; x++)
+	{
+		m[i][j] = x;
+		fil = (i + 1) % 5;
+		col = (j + 1) % 5;
+			if (m[fil][col] == 0)
+			{
+				i = fil;
+				j = col;
+			}
+			else
+			{
+				i = (i - 1 + 5) % 5;
+			}
+		}
+		for (int f = 0; f < 5; f++)
+		{
+			for (int c = 0; c < 5; c++)
+			{
+				cout << m[f][c] << " ";
+			}
+			cout << "\n";
+		}
+
+		
+		_getch();
+		system("cls");
+
+	
+
 }
+
+
 
 int main()
 {
+		
+	
 	//Ejercicio1();
+
+	Ejercicio2();
+
+
 
 	return 0;
 }
@@ -86,6 +133,15 @@ A medida que se lea cada número, validarlo y almacenarlo en un arreglo sólo si
 duplicado de un número previamente leído. 
 Después de llenar el arreglo debe mostrar los números almacenados y la cantidad de veces 
 que se repitió un número. *****/
+
+
+
+
+/*EJERCICIO 7. LAURA	Un cuadrado mágico es una disposición de números naturales en una tabla cuadrada, 
+de modo que las sumas de cada columna, de cada fila y de cada diagonal son iguales.
+Escriba una función que reciba un arreglo cuadrado de enteros de n×n, e indique si se trata 
+de un cuadrado mágico.*/
+
 
 
 
