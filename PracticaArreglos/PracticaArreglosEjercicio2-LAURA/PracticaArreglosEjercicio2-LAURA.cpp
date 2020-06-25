@@ -13,7 +13,7 @@ using namespace std;
 /// </summary>
 /// <param name="numero">El numero a agregar</param>
 /// <returns>verdadero si no cumple con las restricciones verdadero si 
-// las cumple. El numero debe de estar entre 10 y 100 </returns>
+/// las cumple. El numero debe de estar entre 10 y 100 </returns>
 bool ValidarNumero(int numero) {
 	if (numero < 10 || numero > 100)
 		return false;
@@ -21,14 +21,16 @@ bool ValidarNumero(int numero) {
 }
 
 /// <summary>
-/// Funcion ---
+/// Funcion que busca en el arreglo a, si existe el numero digitado
 /// </summary>
-/// <param name="a"></param>
-/// <param name="numero"></param>
-/// <returns></returns>
+/// <param name="a">es el nombre del arreglo</param>
+/// <param name="numero">es el numero que ingresa el usuario</param>
+/// <returns>faslso si el numero no esta en el arreglo, verdadero si está</returns>
 bool ExisteNumero(std::array<int, 20U> a, int numero)
 {
 
+	//La palabra clave auto por sí misma representa un tipo de valor, similar a int o char
+	//la variable define en tiempo de ejecucion el tipo
 	for (auto& current : a) {
 		if (current == numero)
 		{
@@ -46,14 +48,16 @@ void Ejercicio1()
 	//numero que se ingresa
 	int numero;
 
-	//ciclo for
+	//ciclo for que pide el numero al usuario entre 10 y 100
 	for (int i = 0; i < 5; i++) {
 		cout << "Digite un numero entre 10 y 100:\n";
 		cin >> numero;
+		//llama a la funcion ValidarNumero
 		if (!ValidarNumero(numero)) {
 			cout << "El numero debe estar entre 10 y 100";
 		}
 		else {
+			//llama a la funcion ExisteNumero
 			if (!ExisteNumero(a, numero)) {
 				a[i] = numero;
 			}
@@ -63,9 +67,13 @@ void Ejercicio1()
 	}
 }
 
+void Ejercicio2() {
+
+}
+
 int main()
 {
-	Ejercicio1();
+	//Ejercicio1();
 
 	return 0;
 }
@@ -78,6 +86,9 @@ A medida que se lea cada número, validarlo y almacenarlo en un arreglo sólo si
 duplicado de un número previamente leído. 
 Después de llenar el arreglo debe mostrar los números almacenados y la cantidad de veces 
 que se repitió un número. *****/
+
+
+
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
