@@ -1,0 +1,7 @@
+﻿  Ejercicios3.cpp
+C:\Users\laura\source\repos\CursoC\Ejercicios3\Ejercicios3.cpp(38,20): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\laura\source\repos\CursoC\Ejercicios3\Ejercicios3.cpp(39,20): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\laura\source\repos\CursoC\Ejercicios3\Ejercicios3.cpp(40,20): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\laura\source\repos\CursoC\Ejercicios3\Ejercicios3.cpp(56,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\laura\source\repos\CursoC\Ejercicios3\Ejercicios3.cpp(67,12): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Ejercicios3.vcxproj -> C:\Users\laura\source\repos\CursoC\Ejercicios3\Debug\Ejercicios3.exe
